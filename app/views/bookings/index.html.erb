@@ -1,0 +1,22 @@
+<h1>Bookings</h1>
+<h2>Room Name: <%= link_to @room.name, @room %></h2>
+
+    <p><%= link_to "New booking", new_room_booking_path %></p>
+
+    <% if @bookings.present? %>
+        <p><%= pluralize(@bookings.size, "Booking") %></p>
+        <% @bookings.each do |booking| %>
+            <ul>
+                <li>Booked by: <%= booking.booked_by %></li>
+                <li>Purpose: <%= booking.title %></li>
+                <li>Description: <%= booking.description %></li>
+                <li>Start datetime: <%= booking.start_time.strftime("%b %d, %y at %I:%M %P") %></li>
+                <li>End datetime: <%= booking.end_time.strftime("%b %d, %y at %I:%M %P") %></li>
+                <li><%= link_to "Edit", edit_room_booking_path(@room, booking) %></li>
+            </ul>
+        <% end %>
+    <% else %>
+        <p>No bookings</p>
+    <% end %>
+
+

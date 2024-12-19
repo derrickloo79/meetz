@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyString
+  start_time: 2024-12-18 18:37:19
+  end_time: 2024-12-18 18:37:19
+  room: one
+
+two:
+  name: MyString
+  description: MyString
+  start_time: 2024-12-18 18:37:19
+  end_time: 2024-12-18 18:37:19
+  room: two

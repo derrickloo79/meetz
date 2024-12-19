@@ -1,0 +1,13 @@
+<%= form_with(model: room) do |f| %>
+
+    <%= render "shared/errors", object: room %>
+
+    <%= f.label :name %>
+    <%= f.text_field :name, autofocus: true %>
+
+    <%= f.label :room_type %>
+    <%= f.select :room_type, Room::ROOM_TYPE_OPTIONS, prompt: "Pick one" %>
+
+    <%= f.submit %>
+
+<% end %>
