@@ -27,15 +27,7 @@
 <% if @bookings.present? %>
     <p><%= pluralize(@bookings.size, "Booking") %></p>
     <% @bookings.order("start_time").each do |booking| %>
-        <ul>
-            <li>Booked by: <%= booking.booked_by %></li>
-            <li>Purpose: <%= booking.title %></li>
-            <li>Description: <%= booking.description %></li>
-            <li>Start datetime: <%= booking.start_time.strftime("%b %d, %y at %I:%M %P") %></li>
-            <li>End datetime: <%= booking.end_time.strftime("%b %d, %y at %I:%M %P") %></li>
-            <li><%= link_to "Edit", edit_room_booking_path(@room, booking) %></li>
-            <li><%= link_to "Delete!", room_booking_path(@room, booking), data: {turbo_method: :delete, turbo_confirm: "Are you really sure?" }, class: "button" %></li>
-        </ul>
+        <%= render "/bookings/listing_card", booking: booking %>
     <% end %>
 <% else %>
     <p>No bookings</p>
