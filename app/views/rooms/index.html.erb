@@ -1,10 +1,15 @@
-<h1>Rooms</h1>
+<div style="display: flex; gap: 24px; align-items: center;">
+    <h1>Rooms</h1>
+    <%= link_to "New room", new_room_path, class: "buton outlined" %>
+</div>
 
-<% @rooms.each do |room| %>
-    <ul>
-        <li>Name: <%= link_to room.name, room_path(room) %></li>
-        <li>Room Type: <%= room.room_type %></li>
-    </ul>
-<% end %>
-
-<%= link_to "New room", new_room_path, class: "button" %>
+<div class="grid-container"">
+    <% @rooms.each do |room| %>
+        <div class="roomListingCard">
+            <div class="" style="font-size: 18px;"><%= link_to room.name, room_path(room) %></div>
+            <div>
+                <div class="badge"><%= room.room_type %></div>
+            </div>
+        </div>
+    <% end %>
+</div>

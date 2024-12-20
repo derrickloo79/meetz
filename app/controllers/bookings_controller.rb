@@ -3,13 +3,15 @@ class BookingsController < ApplicationController
     def index
         @room = Room.find(params[:room_id])
         @bookings = @room.bookings.order("start_time")
-        @upcoming_start_time = Time.current.change(min: 0) + 1.hour # Sets minutes to 0 and adds one hour
-        @upcoming_end_time = @upcoming_start_time =  + 1.hour
     end
 
     def new
         @room = Room.find(params[:room_id])
         @booking = @room.bookings.new
+        upcoming_start_time = Time.current.beginning_of_hour + 1.hour # Sets minutes to 0 and adds one hour to start time
+        @booking.start_time = upcoming_start_time
+        @booking.end_time = upcoming_start_time + 1.hour
+        @booking.title = "Untitled meeting"
     end
 
     def create
