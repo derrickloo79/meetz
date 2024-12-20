@@ -7,7 +7,14 @@ body {
     margin: 0;
 }
 
+h1,h2,h3,h4,h5 {
+  margin: 0;
+}
+h1 {
+  line-height: 1.5em;
+}
 a {
+  color: #805d93;
   text-decoration: none;
   font-weight: 600;
 }
@@ -103,9 +110,10 @@ form:not([class="button_to"]) {
 .main-content {
   display: flex; /* Use flexbox for main content */
   flex-direction: column;
+  gap: 24px;
   justify-content: center; /* Center align content horizontally */
   max-width: 1000px; /* Set max width for main content */
-  margin: 20px auto; /* Center align the main content with auto margins */
+  margin: 48px auto; /* Center align the main content with auto margins */
 }
 .grid-container {
   display: grid; /* Define the container as a grid */
@@ -124,7 +132,22 @@ form:not([class="button_to"]) {
   background-color: white;
   box-shadow: rgba(0,0,0,0.04) 0 4px 12px;
 }
+.roomActions { /* actions for a room in room details page */
+  display: grid; grid-template-columns: 1fr 2fr 1fr; gap: 8px;
 
+  .left, .center, .right {
+    display: flex; flex-direction:row; gap: 8px; align-items: center; 
+  }
+  .left {
+    justify-content: flex-start;
+  }
+  .center {
+    justify-content: center;
+  }
+  .right {
+    justify-content: flex-end;
+  }
+}
 
 /* Badges */
 .badge {
@@ -139,13 +162,38 @@ form:not([class="button_to"]) {
   border: 1px solid #e5e5e5;
 }
 
+/* Breadcrumbs */
+nav.breadcrumb {
+  padding: 0;
+  margin: 0;
+
+  ol {
+    padding: 0;
+    margin: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    list-style-type: none;
+
+    li {
+      font-size: 14px;
+    } 
+  }
+}
+
 a.buton {
   padding: 8px 16px;
   border-radius: 32px;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
 
   &.outlined {
-    border: 1px solid #e5e5e5;
+    border: 1px solid #805d93;
+    color: #805d93;
+  }
+  &.pri {
+    color: white;
+    background-color: #805d93;
+    border: 1px solid #805d93;
   }
 }

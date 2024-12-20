@@ -1,13 +1,28 @@
-<h1>Room Details</h1>
-
-<ul>
-    <li>Name: <%= @room.name %></li>
-    <li>Room type: <%= @room.room_type %></li>
-    <li><%= link_to "Edit", edit_room_path, class: "button" %></li>
-    <li><%= link_to "Delete!", @room, data: {turbo_method: :delete, turbo_confirm: "Are you really sure?" }, class: "button" %></li>
-</ul>
-
-<p><%= link_to "New booking", new_room_booking_path(@room) %></p>
+<nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol class="">
+        <li class="">
+            <%= link_to "Rooms", rooms_path, class: ""%>
+        </li>
+        <li>
+            /
+        </li>
+        <li aria-current="page" class=""><%= @room.name%></li>
+    </ol>
+</nav>
+    
+<div class="roomActions">
+    <div class="left">
+        <%= link_to "New booking", new_room_booking_path(@room), class: "buton pri" %>
+    </div>
+    <div class="center">
+        <h1><%= @room.name %></h1>
+        <div class="badge"><%= @room.room_type %></div>
+    </div>
+    <div class="right">
+        <div><%= link_to "Edit", edit_room_path, class: "buton outlined" %></div>
+        <div><%= link_to "Delete!", @room, data: {turbo_method: :delete, turbo_confirm: "Are you really sure?" }, class: "buton outlined" %></div>
+    </div>
+</div>
 
 <% if @bookings.present? %>
     <p><%= pluralize(@bookings.size, "Booking") %></p>
@@ -25,6 +40,3 @@
 <% else %>
     <p>No bookings</p>
 <% end %>
-
-
-<p><%= link_to "back to rooms", rooms_path, class: "button" %></p>
