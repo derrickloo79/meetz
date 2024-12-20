@@ -132,8 +132,10 @@ form:not([class="button_to"]) {
   background-color: white;
   box-shadow: rgba(0,0,0,0.04) 0 4px 12px;
 }
-.roomActions { /* actions for a room in room details page */
+.roomActionsRow { /* actions for a room in room details page */
   display: grid; grid-template-columns: 1fr 2fr 1fr; gap: 8px;
+  padding: 20px 0;
+  border-bottom: 1px solid #e5e5e5;
 
   .left, .center, .right {
     display: flex; flex-direction:row; gap: 8px; align-items: center; 

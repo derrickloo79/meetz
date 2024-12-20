@@ -5,11 +5,6 @@
 
 <div class="grid-container"">
     <% @rooms.each do |room| %>
-        <div class="roomListingCard">
-            <div class="" style="font-size: 18px;"><%= link_to room.name, room_path(room) %></div>
-            <div>
-                <div class="badge"><%= room.room_type %></div>
-            </div>
-        </div>
+        <%= render "listing_card", room: room %>
     <% end %>
 </div>
