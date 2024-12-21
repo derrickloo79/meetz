@@ -14,7 +14,7 @@ h1 {
   line-height: 1.5em;
 }
 a {
-  color: #805d93;
+  color: #216869;
   text-decoration: none;
   font-weight: 600;
 }
@@ -25,7 +25,7 @@ a:hover {
 
 header {
   padding: 12px 32px;
-  background-color: #e5e5e5;
+  background-color: #effaFA;
 
   nav {
     display: flex;
@@ -122,41 +122,66 @@ form:not([class="button_to"]) {
 }
 
 /* Rooms */
-.roomListingCard { /* listing card */
+.roomListingCard { /* listing card stye 1 */
   display: flex; 
   flex-direction: column; 
-  gap: 4px;
+  gap: 8px;
   padding: 16px 16px 48px 16px; 
   border-radius: 8px; 
   border: 1px solid #e5e5e5;
   background-color: white;
   box-shadow: rgba(0,0,0,0.04) 0 4px 12px;
 }
+
 .roomActionsRow { /* actions for a room in room details page */
   display: grid; grid-template-columns: 1fr 2fr 1fr; gap: 8px;
   padding: 20px 0;
   border-bottom: 1px solid #e5e5e5;
 
-  .left, .center, .right {
+  .left, .right {
     display: flex; flex-direction:row; gap: 8px; align-items: center; 
   }
   .left {
     justify-content: flex-start;
   }
   .center {
-    justify-content: center;
+    display: flex; flex-direction:column; align-items: center;
   }
   .right {
     justify-content: flex-end;
   }
 }
 
+/* Bookings */
+.bookListingCard { /* listing card stye 1 */
+  display: flex; gap: 8px; padding: 20px 0; border-bottom: 1px solid #e5e5e5;
+
+  .left {
+    width: 120px; font-size: 14px; color: #757575; text-transform: uppercase;
+  }
+  .right {
+    flex-grow: 4; display: flex; flex-direction: column; gap:12px;
+  }
+  .booking-date {
+    line-height: 27px;
+  }
+  .title {
+    font-size: 20px; font-weight:600; line-height: 1.5em;
+  }
+  .timing-booked-by {
+    line-height: 1.3em;
+  }
+  .desc {
+    color:#656565;
+  }
+}
+
 /* Badges */
 .badge {
   display: inline; 
-  font-size: 10px;
-  font-weight: 700;
-  color: #858585;
+  font-size: 12px;
+  font-weight: 600;
+  color: #757575;
   text-transform: uppercase;
   padding: 3px 6px; 
   border-radius: 4px;
@@ -190,12 +215,12 @@ a.buton {
   font-weight: 600;
 
   &.outlined {
-    border: 1px solid #805d93;
-    color: #805d93;
+    border: 1px solid #216869;
+    color: #216869;
   }
   &.pri {
     color: white;
-    background-color: #805d93;
-    border: 1px solid #805d93;
+    background-color: #216869;
+    border: 1px solid #216869;
   }
 }

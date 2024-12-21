@@ -15,8 +15,8 @@
         <%= link_to "New booking", new_room_booking_path(@room), class: "buton pri" %>
     </div>
     <div class="center">
-        <h1><%= @room.name %></h1>
-        <div class="badge"><%= @room.room_type %></div>
+        <div><h1><%= @room.name %></h1></div>
+        <div><div class="badge"><%= @room.room_type %></div></div>
     </div>
     <div class="right">
         <div><%= link_to "Edit", edit_room_path, class: "buton outlined" %></div>
@@ -24,11 +24,12 @@
     </div>
 </div>
 
-<% if @bookings.present? %>
-    <p><%= pluralize(@bookings.size, "Booking") %></p>
-    <% @bookings.order("start_time").each do |booking| %>
-        <%= render "/bookings/listing_card", booking: booking %>
+<div style="flex-grow: 2; display: flex; flex-direction: column; gap: 8px; margin: 0 60px;">
+    <% if @bookings.where("start_time > ?", Time.now).present? %>
+        <% @bookings.where("start_time > ?", Time.now).order("start_time").each do |booking| %>
+            <%= render "/bookings/listing_card_in_room", booking: booking %>
+        <% end %>
+    <% else %>
+        <div style="text-align: center; font-style: italic; color: #656565;">No upcoming bookings</div>
     <% end %>
-<% else %>
-    <p>No bookings</p>
-<% end %>
+</div>

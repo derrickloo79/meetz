@@ -2,7 +2,11 @@ class BookingsController < ApplicationController
 
     def index
         @room = Room.find(params[:room_id])
-        @bookings = @room.bookings.order("start_time")
+        @bookings = @room.bookings.where("start_time > ?", Time.now).order("start_time")
+    end
+
+    def list
+        @bookings = Booking.all.where("start_time > ?", Time.now).order("start_time").order("room_id")
     end
 
     def new

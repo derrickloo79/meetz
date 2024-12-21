@@ -1,0 +1,7 @@
+<div class="roomListingCard">
+    <div>
+        <div class="badge"><%= room.room_type %></div>
+    </div>
+    <div class="" style="font-size: 18px;"><%= link_to room.name, room_path(room) %></div>
+    <div style="padding-top: 4px;"> <%= pluralize(room.bookings.where("start_time > ?", Time.now).count ,"Booking") %> </div>
+</div>

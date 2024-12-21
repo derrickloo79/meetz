@@ -1,0 +1,12 @@
+<% if @bookings.present? %>
+    <div style="padding: 20px 0; border-bottom: 1px solid #e5e5e5; text-align: center;">
+        <h1><%= pluralize(@bookings.size, "Upcoming Booking") %></h1>
+    </div>
+    <% @bookings.each do |booking| %>
+        <%= render "/bookings/listing_card", booking: booking %>
+    <% end %>
+<% else %>
+    <p>No bookings</p>
+<% end %>
+
+

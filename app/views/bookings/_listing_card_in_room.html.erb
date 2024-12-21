@@ -10,11 +10,5 @@
         </div>
         <div class="desc"><%= booking.description %></div>
     </div>
-    <div class="" style="display: flex; flex-direction: column; gap: 4px;width: 200px;">
-        <div class="booking-date"><%= booking.room.name %></div>
-        <div>
-            <div class="badge"><%= booking.room.room_type %></div>
-        </div>
-    </div>
-    
+    <div><%= link_to "Edit", edit_room_booking_path(@room, booking) %> &bull; <%= link_to "Delete!", room_booking_path(@room, booking), data: {turbo_method: :delete, turbo_confirm: "Are you really sure?" }, class: "button" %></div>
 </div>
