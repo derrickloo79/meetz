@@ -168,13 +168,16 @@ form:not([class="button_to"]) {
   box-shadow: rgba(0,0,0,0.04) 0 4px 12px;
 
   .left {
-    width: 120px; font-size: 14px; color: #757575; text-transform: uppercase;
+    width: 120px;
   }
   .right {
     flex-grow: 1; display: flex; flex-direction: column; gap:12px;
   }
   .booking-date {
     line-height: 27px;
+    color: #64748b; 
+    font-size: 14px; 
+    text-transform: uppercase;
   }
   .title {
     font-size: 18px; font-weight:700; line-height: 1.5em;
@@ -183,7 +186,7 @@ form:not([class="button_to"]) {
     line-height: 1.3em;
   }
   .desc {
-    color:#656565;
+    color: #64748b; 
   }
 }
 
