@@ -1,4 +1,4 @@
-<div class="bookListingCard">
+<div class="bookingListingCard">
     <div class="left">
         <div class="booking-date"><%= booking.start_time.strftime("%a, %d %b") %></div>
     </div>
@@ -10,11 +10,10 @@
         </div>
         <div class="desc"><%= booking.description %></div>
     </div>
-    <div class="" style="display: flex; flex-direction: column; gap: 4px;width: 200px;">
+    <div class="" style="display: flex; flex-direction: column; gap: 4px; width: 200px;">
         <div class="booking-date"><%= booking.room.name %></div>
         <div>
             <div class="badge"><%= booking.room.room_type %></div>
         </div>
     </div>
-    
 </div>
