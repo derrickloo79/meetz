@@ -159,7 +159,8 @@ form:not([class="button_to"]) {
 /* Bookings */
 .bookingListingCard { /* listing card stye 1 */
   /* display: flex; gap: 8px; padding: 20px 0; border-bottom: 1px solid #e5e5e5; */
-  display: flex; gap: 8px; 
+  display: flex; 
+  gap: 8px; 
   padding: 16px 20px; 
   border-radius: 8px; 
   border: 1px solid #e5e5e5;
@@ -170,13 +171,13 @@ form:not([class="button_to"]) {
     width: 120px; font-size: 14px; color: #757575; text-transform: uppercase;
   }
   .right {
-    flex-grow: 4; display: flex; flex-direction: column; gap:12px;
+    flex-grow: 1; display: flex; flex-direction: column; gap:12px;
   }
   .booking-date {
     line-height: 27px;
   }
   .title {
-    font-size: 20px; font-weight:700; line-height: 1.5em;
+    font-size: 18px; font-weight:700; line-height: 1.5em;
   }
   .timing-booked-by {
     line-height: 1.3em;
@@ -184,6 +185,30 @@ form:not([class="button_to"]) {
   .desc {
     color:#656565;
   }
+}
+
+/* Users */
+.userListingCard {
+  display: flex; 
+  gap: 12px;
+  padding: 16px 20px;
+  border-radius: 4px; 
+  border: 1px solid #e5e5e5;
+  background-color: white;
+  box-shadow: rgba(0,0,0,0.04) 0 4px 12px;
+  align-items: center;
+}
+.userAvatar {
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  width: 48px; 
+  height: 48px; 
+  font-size: 28px; 
+  font-weight: 600; 
+  color: white; 
+  border-radius: 100%;
+  background-color: #2dd4bf; 
 }
 
 /* Badges */

@@ -1,0 +1,20 @@
+<div class="roomActionsRow">
+    <div class="left">
+        <%= link_to "New user", new_user_path, class: "buton pri" %>
+    </div>
+    <div class="center">
+        <h1><%= pluralize(@users.count, "User") %></h1>
+    </div>
+    <div class="right">
+    </div>
+</div>
+
+<% if @users.present? %>
+    <div style="display: flex; flex-direction: column; gap: 12px;">
+        <% @users.each do |user| %>
+            <%= render "/users/listing_card", user: user %>
+        <% end %>
+    </div>
+<% else %>
+    <p>No users</p>
+<% end %>
