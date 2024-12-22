@@ -1,5 +1,12 @@
-<h1>Edit booking details: <%= @booking.title %></h1>
-
+<div class="roomActionsRow">
+    <div class="left">
+        <%= link_to "< Back", room_path(@room), class: "button" %>
+    </div>
+    <div class="center">
+        <h1>Edit booking details</h1>
+    </div>
+    <div class="right">
+    </div>
+</div>
 <%= render "form", room: @room, booking: @booking %>
 
-<%= link_to "go back to room", room_path(@room), class: "button" %>

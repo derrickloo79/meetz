@@ -57,56 +57,108 @@ header {
 
     li {
       display: inline;
+      font-size: 18px;
     }
-    
   }
 }
 
 /* Forms */
-form.button_to {
-  display: inline;
-}
+form {
+  width: 100%; /* Or any preferred width */
 
-form:not([class="button_to"]) {
-  background: #f4f4f4;
-  padding: 20px;
-  border-radius: 5px;
   max-width: 600px;
-  margin: 20px auto;
+  margin: 20px auto; /* Center the form */
+  padding: 20px;
+  background: #f4f4f4;
+  border-radius: 4px;
 
   label {
     display: block;
-    margin-bottom: 5px;
+    font-size: 14px;
+    margin-bottom: 4px;
     font-weight: 600;
   }
+}
 
-  input[type="text"],
-  input[type="email"],
-  input[type="password"],
-  textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 3px;
-    box-sizing: border-box; /* Ensures padding doesn't affect overall width */
-  }
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: 'system-ui';
+  font-size: 16px;
+}
 
-  input[type="submit"] {
-    display: block;
-    background: #2C3E50;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    margin-top: 15px;
-    cursor: pointer;
-    border-radius: 3px;
-    transition: background 0.3s ease;
+/* Styling for regular select fields */
+select:not(.datetime-select select) {
 
-    &:hover {
-      background: #34495E;
-    }
-  }
+  font-size: 16px;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="black" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+}
+
+/* Styling for datetime select fields */
+form select[name*="booking[start_time(1i)]"],
+form select[name*="booking[start_time(2i)]"],
+form select[name*="booking[start_time(3i)]"],
+form select[name*="booking[start_time(4i)]"],
+form select[name*="booking[start_time(5i)]"],
+form select[name*="booking[end_time(1i)]"],
+form select[name*="booking[end_time(2i)]"],
+form select[name*="booking[end_time(3i)]"],
+form select[name*="booking[end_time(4i)]"],
+form select[name*="booking[end_time(5i)]"]
+ {
+  font-size: 16px;
+  width: auto;
+  padding: 10px 40px 10px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="black" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 5px center;
+}
+/* Then wrap them in a flex container */
+form div[name*="booking_start_time"],
+form div[name*="booking_end_time"] {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 16px;
+}
+
+/* Styling for submit button */
+input[type="submit"] {
+  display: block;
+  margin-top: 15px;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 32px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  background-color: #216869;
+  border: 1px solid #216869;
+  transition: background 0.3s ease;
 }
 
 .main-content {
@@ -242,6 +294,10 @@ nav.breadcrumb {
 
     li {
       font-size: 14px;
+
+      &.current {
+        font-weight: 600;
+      }
     } 
   }
 }
@@ -251,6 +307,7 @@ a.buton {
   border-radius: 32px;
   text-decoration: none;
   font-weight: 600;
+  font-size: 1rem;
 
   &.outlined {
     border: 1px solid #216869;

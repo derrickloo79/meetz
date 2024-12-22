@@ -1,5 +1,13 @@
-<h1>Edit room</h1>
+<div class="roomActionsRow">
+    <div class="left">
+        <%= link_to "< Back", room_path(@room), class: "button" %>
+    </div>
+    <div class="center">
+        <h1>Edit room</h1>
+    </div>
+    <div class="right">
+    </div>
+</div>
 
 <%= render "form", room: @room %>
 
-<%= link_to "cancel", room_path(@room), class: "button" %>

@@ -12,10 +12,10 @@
     <%= f.text_field :booked_by %>
 
     <%= f.label :start_time %>
-    <%= f.datetime_select :start_time, {default: booking.start_time, ampm: true, minute_step: 15}, {class: ""} %>
+    <%= f.datetime_select :start_time, {default: booking.start_time, ampm: true, minute_step: 15} %>
 
     <%= f.label :end_time %>
-    <%= f.datetime_select :end_time, {default: booking.end_time, ampm: true, minute_step: 15}, {class: ""} %>
+    <%= f.datetime_select :end_time, {default: booking.end_time, ampm: true, minute_step: 15} %>
 
     <%= f.submit %>
 
