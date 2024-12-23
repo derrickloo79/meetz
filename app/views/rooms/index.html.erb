@@ -1,6 +1,8 @@
 <div class="roomActionsRow">
     <div class="left">
-        <%= link_to "New room", new_room_path, class: "buton pri" %>
+        <% if current_user_admin? %>
+            <%= link_to "New room", new_room_path, class: "buton pri" %>
+        <% end %>
     </div>
     <div class="center">
         <h1>Rooms</h1>

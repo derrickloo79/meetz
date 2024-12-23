@@ -1,4 +1,5 @@
 class BookingsController < ApplicationController
+    before_action :require_signin, except: [:index, :show]
 
     def index
         @room = Room.find(params[:room_id])

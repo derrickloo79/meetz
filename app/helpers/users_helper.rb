@@ -1,5 +1,5 @@
 module UsersHelper
-    def get_initials(user)
-        user.name.split.map { |name| name[0] }.join.upcase
+    def get_initials(username)
+        username.split.map { |name| name[0] }.join.upcase
     end
 end

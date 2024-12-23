@@ -19,8 +19,9 @@
         <div><div class="badge"><%= @room.room_type %></div></div>
     </div>
     <div class="right">
-        <div><%= link_to "Edit", edit_room_path, class: "buton outlined" %></div>
-        <div><%= link_to "Delete!", @room, data: {turbo_method: :delete, turbo_confirm: "Are you really sure?" }, class: "buton outlined" %></div>
+        <% if current_user_admin? %>
+            <div><%= link_to "Delete!", @room, data: {turbo_method: :delete, turbo_confirm: "Are you really sure?" }, class: "buton outlined" %></div>
+        <% end %>
     </div>
 </div>
 

@@ -1,12 +1,17 @@
 <div class="userListingCard">
     <div>
-        <span class="userAvatar"><%= get_initials(user) %></span>
+        <span class="userAvatar large"><%= get_initials(user.name) %></span>
     </div>
     <div style="flex-grow: 1; display: flex; flex-direction: column; gap: 4px;">
         <div style="display: flex; gap: 8px; align-items: center;"><span style="font-size: 18px; font-weight: 700;"><%= user.name %></span> <div class="badge"><%= user.organization %></div></div>
         <span style="color: #64748b; font-size: 14px;"><%= user.email %></span>
     </div>
-    <div>
-        <%= link_to "Edit", edit_user_path(user) %> &bull; <%= link_to "Delete!", user_path(user), data: {turbo_method: :delete, turbo_confirm: "Are you really sure?" } %>
+    <div style="display: flex; gap: 8px;">
+        <% if current_user?(user) %>
+            <div><%= link_to "Edit", edit_user_path(user) %></div>
+        <% end %>
+        <% if current_user_admin? %>
+            <div><%= link_to "Delete!", user_path(user), data: {turbo_method: :delete, turbo_confirm: "Are you really sure?" } %></div>
+        <% end %>
     </div>
 </div>

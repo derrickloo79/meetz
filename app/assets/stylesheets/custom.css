@@ -77,7 +77,8 @@ header {
   }
 
   &.alert {
-    @extend .alert-danger;
+    color: #dc2626;
+    background-color: #fef2f2;
   }
 }
 
@@ -301,13 +302,28 @@ div.field_with_errors {
   display: flex; 
   align-items: center; 
   justify-content: center; 
-  width: 48px; 
-  height: 48px; 
-  font-size: 28px; 
-  font-weight: 600; 
   color: white; 
   border-radius: 100%;
-  background-color: #2dd4bf; 
+  background-color: #2dd4bf;
+
+  &.small {
+    width: 32px; 
+    height: 32px; 
+    font-size: 16px; 
+    font-weight: 600; 
+  }
+  &.large {
+    width: 48px; 
+    height: 48px; 
+    font-size: 28px; 
+    font-weight: 600; 
+  }
+  &.x-large {
+    width: 60px; 
+    height: 60px; 
+    font-size: 32px; 
+    font-weight: 600; 
+  }
 }
 
 /* Badges */
