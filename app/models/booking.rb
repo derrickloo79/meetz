@@ -1,5 +1,6 @@
 class Booking < ApplicationRecord
   belongs_to :room
+  belongs_to :user
 
-  validates :title, :booked_by, presence: true
+  validates :title, presence: true
 end

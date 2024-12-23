@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  
+  has_many :bookings, dependent: :destroy
   has_secure_password
 
   ORGANIZATION_OPTIONS = [

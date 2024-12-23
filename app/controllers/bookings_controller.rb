@@ -55,6 +55,6 @@ private
 
     def booking_params
         params.require(:booking).
-            permit(:title, :description, :booked_by, :start_time, :end_time)
+            permit(:title, :description, :start_time, :end_time)
     end
 end
