@@ -31,7 +31,7 @@ class RoomsController < ApplicationController
     def update
         @room = Room.find(params[:id])
         if @room.update(room_params)
-            redirect_to rooms_path, notice: "Room updated successfully"
+            redirect_to @room, notice: "Room updated successfully"
         else
             render :edit, status: :unprocessable_entity
         end

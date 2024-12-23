@@ -6,7 +6,10 @@
         <div>
             <div class="title"><%= booking.title %></div>
             <div class="timing-booked-by"><%= booking.start_time.strftime("%I:%M %P") %> - <%= booking.end_time.strftime("%I:%M %P") %></div>
-            <div class="timing-booked-by"><%= booking.booked_by %></div>
+            <div class="timing-booked-by" style ="display: flex; gap: 4px; align-items: center;">
+                <span class="userAvatar x-small"><%= get_initials(booking.user.name) %></span>
+                <%= link_to booking.user.name, user_path(booking.user) %>
+            </div>
         </div>
         <div class="desc"><%= booking.description %></div>
     </div>

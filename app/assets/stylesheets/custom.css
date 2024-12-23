@@ -306,6 +306,12 @@ div.field_with_errors {
   border-radius: 100%;
   background-color: #2dd4bf;
 
+  &.x-small {
+    width: 24px; 
+    height: 24px; 
+    font-size: 12px; 
+    font-weight: 600; 
+  }
   &.small {
     width: 32px; 
     height: 32px; 

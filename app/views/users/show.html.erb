@@ -26,3 +26,13 @@
     <div class="right">
     </div>
 </div>
+
+<% if @bookings.present? %>
+    <div style="display: flex; flex-direction: column; gap: 12px;">
+        <% @bookings.each do |booking| %>
+            <%= render "/bookings/listing_card", booking: booking %>
+        <% end %>
+    </div>
+<% else %>
+    <p>No bookings</p>
+<% end %>
