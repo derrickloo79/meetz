@@ -57,8 +57,27 @@ header {
 
     li {
       display: inline;
-      font-size: 18px;
     }
+  }
+}
+
+/* Flashes */
+
+.flash {
+  width: 100%;
+  max-width: 952px;
+  padding: 24px;
+  text-align: center;
+  margin-top: -1rem;
+  margin-bottom: 1rem;
+
+  &.notice {
+    color: #15803d;
+    background-color: #f0fdf4;
+  }
+
+  &.alert {
+    @extend .alert-danger;
   }
 }
 
@@ -96,7 +115,6 @@ textarea {
 
 /* Styling for regular select fields */
 select:not(.datetime-select select) {
-
   font-size: 16px;
   width: 100%;
   padding: 10px;
@@ -159,6 +177,32 @@ input[type="submit"] {
   background-color: #216869;
   border: 1px solid #216869;
   transition: background 0.3s ease;
+}
+
+/* Common focus styles */
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border: 2px solid rgb(13, 148, 136);
+  box-sizing: border-box;
+  box-shadow: 0 0 0 0.2rem rgba(13, 148, 136,.25);
+}
+
+div.field_with_errors {
+  display: inline;
+  label {
+    color: #dc2626;
+  }
+  input,
+  textarea,
+  select {
+    background: #fef2f2 !important;
+    border: 1px solid #dc2626;
+    box-sizing: border-box;
+  }
+  input:focus, textarea:focus, select:focus {
+    border: 2px solid rgb(220, 38, 38) !important;
+    box-shadow: 0 0 0 0.2rem rgba(220, 38, 38,.25);
+  }
 }
 
 .main-content {
@@ -317,5 +361,20 @@ a.buton {
     color: white;
     background-color: #216869;
     border: 1px solid #216869;
+  }
+}
+
+/* Errors */
+
+section.errors {
+  margin: 1rem 0;
+  padding: 1.5rem;
+  border-radius: 0.3rem;
+  background: #fef2f2;
+  color: #dc2626;
+
+  h3 {
+    margin-top: 1rem;
+    font-weight: 600;
   }
 }

@@ -26,7 +26,7 @@ class UsersController < ApplicationController
         if @user.update(user_params)
             redirect_to users_path, notice: "User updated successfully!"
         else
-            render :new, status: :unprocessable_entity
+            render :edit, status: :unprocessable_entity
         end
     end
 
