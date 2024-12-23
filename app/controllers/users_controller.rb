@@ -4,7 +4,7 @@ class UsersController < ApplicationController
     before_action :require_admin, only: [:destroy]
 
     def index
-        @users = User.all.order("name")
+        @users = User.all.where(admin: false).order("name")
     end
 
     def new
