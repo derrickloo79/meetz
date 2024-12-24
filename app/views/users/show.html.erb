@@ -15,8 +15,12 @@
 <div style="display: flex; flex-direction: column; gap: 12px; align-items: center; margin: 24px 0;">
     <div><span class="userAvatar x-large"><%= get_initials(@user.name) %></div>
     <div style="display: flex; flex-direction: column; gap: 4px; align-items: center;">
-        <div style="display: flex; gap: 8px; align-items: center;"><h2><%= @user.name %></h2> <div class="badge"><%= @user.organization %></div></div>
-        <div><span style="color: #64748b;"><%= @user.email %></span></div>
+        <div style="display: flex; gap: 0px; align-items: center;">
+            <h3><%= @user.name %></h3>, 
+            <div style="font-size: 18px; margin-left: 4px;"><%= @user.organization %></div>
+            <% if @user.admin == true %><div class="badge" style="margin-left: 8px;">Admin</div><% end %>
+        </div>
+        <span style="color: #64748b; font-size: 14px;"><%= @user.email %></span>
     </div>
 </div>
 

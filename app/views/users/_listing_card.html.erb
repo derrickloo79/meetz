@@ -3,7 +3,11 @@
         <span class="userAvatar large"><%= get_initials(user.name) %></span>
     </div>
     <div style="flex-grow: 1; display: flex; flex-direction: column; gap: 4px;">
-        <div style="display: flex; gap: 8px; align-items: center;"><h3><%= link_to user.name, user_path(user) %></h3> <div class="badge"><%= user.organization %></div></div>
+        <div style="display: flex; gap: 0px; align-items: center;">
+            <h3><%= link_to user.name, user_path(user) %></h3>, 
+            <div style="font-size: 18px; margin-left: 4px;"><%= user.organization %></div>
+            <% if user.admin == true %><div class="badge" style="margin-left: 8px;">Admin</div><% end %>
+        </div>
         <span style="color: #64748b; font-size: 14px;"><%= user.email %></span>
     </div>
     <div style="display: flex; gap: 8px;">
