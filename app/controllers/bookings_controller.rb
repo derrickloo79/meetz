@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-    before_action :require_signin, except: [:index, :show]
+    before_action :require_signin
     before_action :require_correct_user, only: [:edit, :update, :destroy]
 
     def index
