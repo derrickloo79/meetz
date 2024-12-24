@@ -21,7 +21,7 @@
     <div class="right">
         <% if current_user_admin? %>
             <div style="display: flex; gap: 4px;">
-                <%= link_to "Edit", edit_room_path(@room), class: "buton outlined" %><%= link_to "Delete!", @room, data: {turbo_method: :delete, turbo_confirm: "Are you really sure?" }, class: "buton outlined" %>
+                <%= link_to "Edit", edit_room_path(@room), class: "buton outlined" %><%= link_to "Delete", @room, data: {turbo_method: :delete, turbo_confirm: "Are you really sure?" }, class: "buton outlined" %>
             </div>
         <% end %>
     </div>

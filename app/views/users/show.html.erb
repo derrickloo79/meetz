@@ -14,14 +14,17 @@
 
 <div style="display: flex; flex-direction: column; gap: 12px; align-items: center; margin: 24px 0;">
     <div><span class="userAvatar x-large"><%= get_initials(@user.name) %></div>
-    <div style="display: flex; gap: 8px; align-items: center;"><h2><%= @user.name %></h2> <div class="badge"><%= @user.organization %></div></div>
+    <div style="display: flex; flex-direction: column; gap: 4px; align-items: center;">
+        <div style="display: flex; gap: 8px; align-items: center;"><h2><%= @user.name %></h2> <div class="badge"><%= @user.organization %></div></div>
+        <div><span style="color: #64748b;"><%= @user.email %></span></div>
+    </div>
 </div>
 
 <div class="roomActionsRow">
     <div class="left">
     </div>
     <div class="center">
-        <h2>Upcoming Bookings</h2>
+        <h1>Upcoming Bookings</h1>
     </div>
     <div class="right">
     </div>
@@ -29,10 +32,10 @@
 
 <% if @bookings.present? %>
     <div style="display: flex; flex-direction: column; gap: 12px;">
-        <% @bookings.each do |booking| %>
+        <% @bookings.where("start_time > ?", Time.now).each do |booking| %>
             <%= render "/bookings/listing_card", booking: booking %>
         <% end %>
     </div>
 <% else %>
-    <p>No bookings</p>
+    <div style="text-align: center; font-style: italic; color: #656565;">No upcoming bookings</div>
 <% end %>

@@ -11,7 +11,7 @@
             <div><%= link_to "Edit", edit_user_path(user) %></div>
         <% end %>
         <% if current_user_admin? %>
-            <div><%= link_to "Delete!", user_path(user), data: {turbo_method: :delete, turbo_confirm: "Are you really sure?" } %></div>
+            <div><%= link_to "Delete", user_path(user), data: {turbo_method: :delete, turbo_confirm: "Are you really sure?" } %></div>
         <% end %>
     </div>
 </div>

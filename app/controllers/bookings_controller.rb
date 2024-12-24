@@ -1,5 +1,6 @@
 class BookingsController < ApplicationController
     before_action :require_signin, except: [:index, :show]
+    before_action :require_correct_user, only: [:edit, :update, :destroy]
 
     def index
         @room = Room.find(params[:room_id])
@@ -57,5 +58,12 @@ private
     def booking_params
         params.require(:booking).
             permit(:title, :description, :start_time, :end_time)
+    end
+
+    def require_correct_user
+        room = Room.find(params[:room_id])
+        booking = room.bookings.find(params[:id])
+        user = User.find(booking.user_id)
+        redirect_to root_url, status: :see_other, alert: "You are not authorized to perform that action!" unless current_user?(user)
     end
 end

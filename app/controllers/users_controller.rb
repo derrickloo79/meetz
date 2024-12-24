@@ -52,8 +52,8 @@ class UsersController < ApplicationController
     end
 
     def require_correct_user
-        @user = User.find(params[:id])
-        redirect_to root_url, status: :see_other, alert: "You are not authorized to perform that action!" unless current_user?(@user)
+        user = User.find(params[:id])
+        redirect_to root_url, status: :see_other, alert: "You are not authorized to perform that action!" unless current_user?(user)
     end
 
 end
